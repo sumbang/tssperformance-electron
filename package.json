@@ -4,7 +4,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win --mac"
+    "package": "electron-packager . \"Tss Performance\" --platform=win32 --arch=x64 --icon=public/icons/favicon.ico"
   },
   "keywords": [],
   "author": "TSS Performance",

@@ -9,7 +9,6 @@ function createWindow () {
     height: 768,
     //fullscreen: true, 
     title: 'Tss Performance',
-    icon: path.join(__dirname, 'public/icons/icon.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,

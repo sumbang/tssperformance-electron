@@ -1,0 +1,9 @@
+{
+    "dest": "dist/installers/",
+    "icon": "resources/favicon.ico",
+    "copyright": "Tss Performance",
+    "version": "1.0",
+    "tags": [
+      "Utility"
+    ]
+  }

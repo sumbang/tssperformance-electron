@@ -1,12 +1,12 @@
-  //  "build": "electron-builder --win --mac"
-
-  {
+{
   "name": "tssperformance",
   "version": "1.0.0",
-  "main": "src/main.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . \"Tss Performance\" --platform=win32 --arch=x64 --icon=public/icons/favicon.ico --overwrite --asar"
+    "clean": "rm -rf MyApp-win32-x64",
+    "package": "npm run clean && electron-packager . \"Tss Performance\" --platform=win32 --arch=x64 --icon=public/icons/favicon.ico --overwrite --asar",
+    "build": "electron-builder --win"
   },
   "keywords": [],
   "author": "TSS Performance",
@@ -20,10 +20,7 @@
       "output": "dist"
     },
     "files": [
-      "src/**/*",
-      "node_modules/**/*",
-      "main.js",
-      "package.json"
+      "**/*"
     ],
     "mac": {
       "icon": "public/icons/icon.icns",
@@ -34,16 +31,10 @@
           "to": "Info.plist"
         }
       ],
-      "target": [
-        "dmg",
-        "zip"
-      ]
+      "target": "dmg"
     },
     "win": {
-      "target": [
-        "nsis",
-        "portable"
-      ],
+      "target": "nsis",
       "icon": "public/icons/favicon.ico"
     },
     "linux": {
@@ -68,6 +59,7 @@
   "devDependencies": {
     "electron": "^32.0.2",
     "electron-builder": "^25.0.5",
-    "electron-packager": "^17.1.2"
+    "electron-packager": "^17.1.2",
+    "electron-winstaller": "^5.4.0"
   }
 }

@@ -1,71 +1,13 @@
 {
-  "name": "tssperformance",
-  "version": "1.0.0",
-  "main": "src/main.js",
-  "scripts": {
-    "start": "electron .",
-    "package": "npm run clean && electron-packager . \"Tss Performance\" --platform=win32 --arch=x64 --icon=public/icons/favicon.ico --overwrite --asar"
-  },
-  "keywords": [],
-  "author": "TSS Performance",
-  "license": "ISC",
-  "description": "A chacun son tableau de bord",
-  "productName": "Tss Performance",
-  "build": {
-    "appId": "mobile.tssperformance.com",
-    "productName": "Tss Performance",
-    "directories": {
-      "output": "dist"
+    "name": "tssperformance",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron .",
+      "create-installer": "node create-installer.js"
     },
-    "files": [
-      "src/**/*",
-      "node_modules/**/*",
-      "main.js",
-      "package.json"
-    ],
-    "mac": {
-      "icon": "public/icons/icon.icns",
-      "category": "public.app-category.utilities",
-      "extraFiles": [
-        {
-          "from": "Info.plist",
-          "to": "Info.plist"
-        }
-      ],
-      "target": [
-        "dmg",
-        "zip"
-      ]
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "portable"
-      ],
-      "icon": "public/icons/favicon.ico"
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb",
-        "rpm"
-      ],
-      "icon": "public/icons/icon.png"
-    },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": true,
-      "allowToChangeInstallationDirectory": true
-    },
-    "dmg": {
-      "background": "public/icons/background.png",
-      "icon": "public/icons/icon.icns",
-      "iconSize": 80
+    "dependencies": {
+        "electron": "^32.0.2",
+      "electron-winstaller": "^5.0.0"
     }
-  },
-  "devDependencies": {
-    "electron": "^32.0.2",
-    "electron-builder": "^25.0.5",
-    "electron-packager": "^17.1.2"
   }
-}

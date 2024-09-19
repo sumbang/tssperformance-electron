@@ -1,0 +1,46 @@
+{
+  "name": "tssperformance",
+  "version": "1.0.0",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "TSS Performance",
+  "license": "ISC",
+  "description": "A chacun son tableau de bord",
+  "productName": "Tss Performance",
+  "build": {
+    "appId": "mobile.tssperformance.com",
+    "productName": "Tss Performance",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "mac": {
+      "icon": "resources/icon.icns",
+      "category": "public.app-category.utilities",
+      "extraFiles": [
+        {
+          "from": "Info.plist",
+          "to": "Info.plist"
+        }
+      ],
+      "target": "dmg"
+    },
+    "dmg": {
+      "background": "resources/background.png",
+      "icon": "resources/icon.icns",
+      "iconSize": 80
+    }
+  },
+  "devDependencies": {
+    "electron": "^32.0.2",
+    "electron-builder": "^25.0.5",
+    "electron-packager": "^17.1.2",
+    "electron-winstaller": "^5.4.0"
+  }
+}
